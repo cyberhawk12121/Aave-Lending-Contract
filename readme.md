@@ -1,14 +1,25 @@
-So, we have 2 tokens
-One that the investors will invest in like some USD or some shit.
-The other is our own cryptocurrency that they'll get back as interest.
+## Aave Lending Contract
 
-What we do is that we put all the money in the contract (some kinda pool) then 
-the smart contract will organize that cash pool.
+### How to run
+To the run the contract make sure you have:
+1.  [Metamask](https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en) installed in the browser
+2.  [NodeJS](https://nodejs.org/en/download/) installed locally
 
+Now run the command `npm install`. It'll install all the dependecies like truffle and it's helping libraries. After this there are few things that needs to be done:
+1.  Create an account on [Infura](https://infura.io/)
+2.  Start a project and get the endpoint to connect to Kovan testnet.
+3.  Setup a Mnemonic as well that will get the account
 
-### Approve and Transfer Functions
-The `approve` + `transferFrom` is for a 3rd party transfer, usually, but not necessarily that of an exchange, where the sender wishes to authorise a second party to transfer some tokens on their behalf.
+> Make sure to have some Ethers on your Kovan testnet account to carry out the transactions
 
-Sender ➜ `approve(exchange, amount)`
-Buyer ➜ `executes trade on the Exchange`
-Exchange ➜ `transferFrom(sender, buyer, amount)`
+### Truffle Commands (On console)
+1.  truffle migrate --network kovan
+This will deploy the contract on the network
+
+2.  truffle console
+We can now access and use the contract
+  3.  const contract= await MyContract.deployed()
+  4.  await contract.deposit()
+  5.  const interest_earned= await contract.withdrawi(<amt>)
+ 
+This way you can use the contract.
