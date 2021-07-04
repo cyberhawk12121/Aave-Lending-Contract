@@ -2,17 +2,17 @@ require('babel-register');
 require('babel-polyfill');
 
 const HDWalletProvider = require("@truffle/hdwallet-provider");
-const MNEMONIC = '<Enter Mnemonic>';
+const MNEMONIC = 'rapid myth magic broom axis east timber music mixture mercy error priority';
 
 module.exports = {
   networks: {
     development: {
       host: "127.0.0.1",
-      port: 7545,
+      port: 8545,
       network_id: "*" // Match any network id
     },
     kovan:{
-      provider: ()=> HDWalletProvider(MNEMONIC, "https://kovan.infura.io/v3/<PROJECT-ID>"),
+      provider: ()=> HDWalletProvider(MNEMONIC, "https://kovan.infura.io/v3/84e5ee7d74cb499d9d0f98af91ee62e1/"),
       network_id:42,
       gas: 5500000,
       confirmations: 2,
@@ -32,7 +32,7 @@ module.exports = {
   // },
   compilers:{
     solc:{
-      version: "^0.6.0",
+      version: "^0.6.12",
       settings:{
         optimizer:{
           enabled: false,
