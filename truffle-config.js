@@ -2,7 +2,7 @@ require('babel-register');
 require('babel-polyfill');
 
 const HDWalletProvider = require("@truffle/hdwallet-provider");
-const MNEMONIC = 'table oyster deputy bulk fatigue junior ethics naive build tornado tribe they';
+const MNEMONIC = 'already bench slice awful major pull reveal mammal protect next auction good';
 
 module.exports = {
   networks: {

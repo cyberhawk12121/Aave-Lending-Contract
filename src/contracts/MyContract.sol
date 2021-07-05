@@ -1,21 +1,13 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.6.12;
 
-/*
-    Import: 
-    1. ERC20 
-    2. LendingPool
-    3. LendingPoolReceiverAddress
-*/  
-
-import "https://github.com/aave/protocol-v2/blob/ice/mainnet-deployment-03-12-2020/contracts/interfaces/ILendingPool.sol";
-import "https://github.com/aave/protocol-v2/blob/ice/mainnet-deployment-03-12-2020/contracts/interfaces/ILendingPoolAddressesProvider.sol";
-import "./IERC20.sol";
+import {ILendingPool} from "./AaveInterfaces/ILendingPool.sol";
+import {ILendingPoolAddressesProvider} from "./AaveInterfaces/ILendingPoolAddressesProvider.sol";
+import {IERC20} from "./IERC20.sol";
 
 contract AaveDeposit{
-  uint256 amt;    // Amount to deposited
   address owner;  // Owner of this contract
-  address dai=address(0x6b175474e89094c44da98b954eedeac495271d0f);
+  address dai=address(0x6B175474E89094C44Da98b954EedeAC495271d0F);
 
   mapping(address=>bool) isDepositing;//  When the client has deposited any amount: DEFAULT=0
   mapping(address=>uint) amtDeposited;//  The amount client has deposited: DEFAULT= false
